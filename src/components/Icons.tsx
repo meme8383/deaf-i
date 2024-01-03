@@ -97,44 +97,12 @@ export const Icons = {
           }}
           id='path10'
         />
-        <path
-          style={{
-            fill: 'none',
-            stroke: '#000000',
-            strokeWidth: '1.6',
-            strokeLinecap: 'butt',
-            strokeLinejoin: 'miter',
-            strokeDasharray: 'none',
-            strokeOpacity: 1,
-          }}
-          d='m 131.27732,47.906451 c 0,0 -1.338,1.422538 -2.55407,1.469311 -1.21608,0.04677 -2.36933,-0.288659 -3.258,-0.943468 -0.88867,-0.654812 -4.1731,-2.759559 -4.07955,-7.670636 0.0935,-4.911077 3.45283,-5.244846 3.45283,-5.244846 0,0 2.72873,-0.3969 4.19147,1.175669'
+        <circle
+          style={{ fill: '#000000', stroke: '#000000', strokeWidth: 0 }}
           id='path11'
-        />
-        <path
-          style={{
-            fill: '#000000',
-            fillOpacity: 1,
-            stroke: '#000000',
-            strokeWidth: 0,
-            strokeLinecap: 'butt',
-            strokeLinejoin: 'miter',
-            strokeDasharray: 'none',
-          }}
-          d='m 131.86006,48.464224 c 1.3447,-2.022896 -0.17162,-4.284885 -0.5685,-4.417177 0,0 0.87282,2.370367 -2.20245,4.463421 z'
-          id='path1'
-        />
-        <path
-          style={{
-            fill: '#000000',
-            fillOpacity: 1,
-            stroke: '#000000',
-            strokeWidth: 0,
-            strokeLinecap: 'butt',
-            strokeLinejoin: 'miter',
-            strokeDasharray: 'none',
-          }}
-          d='m 129.61193,36.142775 c 0.65398,0.794782 1.35405,2.837082 1.43674,4.060781 0,0 -1.0046,-1.967764 -2.63256,-2.983896 z'
-          id='path4'
+          cx='127.85516'
+          cy='45.561818'
+          r='6.030355'
         />
       </g>
     </svg>

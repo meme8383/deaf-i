@@ -8,12 +8,12 @@ import MobileNav from './MobileNav';
 
 const Navbar = () => {
   return (
-    <div className='bg-white sticky z-50 top-0 inset-x-0 h-16'>
+    <div className='sticky z-50 top-0 inset-x-0 h-16 bg-white'>
       <header className='relative bg-white'>
         <MaxWidthWrapper>
           <div className='border-b border-gray-200'>
             <div className='flex h-16 items-center'>
-              <MobileNav />
+              {/* <MobileNav /> */}
 
               <div className='ml-4 flex'>
                 <Link href='/'>
@@ -23,7 +23,6 @@ const Navbar = () => {
 
               <div className='hidden z-50 ml-4 lg:ml-8 md:block md:self-stretch'>
                 <div className='flex lg:gap-3 h-full'>
-                  <NavItem name='People' link='/people' />
                   <NavItem name='About Us' link='/about' />
                   <NavItem name='FAQ' link='/faq' />
                   <NavItem name='Resources' link='/resources' />
