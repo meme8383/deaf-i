@@ -60,7 +60,7 @@ export default function Page() {
 
       <section className='bg-slate-200 my-5 py-2'>
         <MaxWidthWrapper>
-          <div className='text-foreground mx-10 w-full'>
+          <div className='text-foreground mx-10'>
             <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
               Our People
             </h1>
