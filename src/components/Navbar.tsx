@@ -1,5 +1,4 @@
 import React from 'react';
-import MaxWidthWrapper from './MaxWidthWrapper';
 import Link from 'next/link';
 import { Icons } from './Icons';
 import { buttonVariants } from './ui/button';
@@ -10,9 +9,9 @@ const Navbar = () => {
   return (
     <div className='sticky z-50 top-0 inset-x-0 h-16 bg-white'>
       <header className='relative bg-white'>
-        <MaxWidthWrapper>
+        <div className='mx-auto w-full max-w-screen-xl md:container'>
           <div className='border-b border-gray-200'>
-            <div className='flex h-16 items-center'>
+            <div className='flex h-16 items-center px-3 md:px-0'>
               <div className='ml-4 flex'>
                 <Link href='/'>
                   <Icons.logo className='h-10' />
@@ -42,7 +41,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        </MaxWidthWrapper>
+        </div>
       </header>
     </div>
   );

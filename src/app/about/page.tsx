@@ -28,7 +28,7 @@ export default function Page() {
     <>
       <MaxWidthWrapper>
         <section>
-          <div className='text-foreground mx-10 mt-5 md:grid md:grid-cols-2 md:gap-3'>
+          <div className='text-foreground md:mx-10 mt-5 md:grid md:grid-cols-2 md:gap-3'>
             <div>
               <h1 className='text-3xl font-semibold tracking-tight border-b'>
                 Mission Statement
@@ -46,9 +46,9 @@ export default function Page() {
                 maximize our impact.
               </p>
             </div>
-            <div className='relative h-96 mt-5 md:mt-0'>
+            <div className='relative h-96 mt-2 md:mt-0'>
               <Image
-                className='object-contain'
+                className='object-contain relative'
                 src='/about/FullSizeRender.jpg'
                 alt='jad'
                 fill
@@ -60,7 +60,7 @@ export default function Page() {
 
       <section className='bg-slate-200 my-5 py-2'>
         <MaxWidthWrapper>
-          <div className='text-foreground mx-10'>
+          <div className='text-foreground md:mx-10'>
             <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
               Our People
             </h1>
