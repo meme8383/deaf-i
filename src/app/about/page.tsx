@@ -5,19 +5,29 @@ import Image from 'next/image';
 const people = [
   {
     name: 'Farah Bader',
-    image: '/about/farah.jpg',
+    role: 'Founder, President',
+    image: '/about/farah-crop.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     name: 'Jad Bader',
-    image: '/about/jad.jpg',
+    role: 'President',
+    image: '/about/jad-crop.jpg',
     description:
       'Jad Bader is currently studying neuroscience at Wahington University intending to go to medical school to become an Otolaryngologist. He is currently doing clinical neuroscience laboratory research at WashU’s medical campus and is leading the next generation of his scholarship cohort the “Danforth Scholars” as their seminar leader.',
   },
   {
     name: 'Barbara Bader',
-    image: '/about/barbara.jpg',
+    role: 'Incorporator and Registered Agent',
+    image: '/about/barbara-crop.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+  {
+    name: 'Eduard Tanase',
+    role: 'Web Developer',
+    image: '/about/eduard-crop.jpg',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
@@ -68,6 +78,7 @@ export default function Page() {
               {people.map((person, i) => (
                 <Person
                   key={i}
+                  role={person.role}
                   name={person.name}
                   image={person.image}
                   description={person.description}
