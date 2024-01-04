@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <>
-      <div className='relative w-full h-[512px] items-center justify-center'>
+      <div className='relative w-full h-svh md:h-[512px] items-center justify-center'>
         <Image
           src='/home/foodbank.jpg'
           alt='food bank group photo'
@@ -12,8 +12,8 @@ export default function Home() {
           objectFit='cover'
           className='brightness-50 bg-no-repeat'
         />
-        <div className='absolute h-full w-full justify-center items-center flex flex-col '>
-          <h1 className='font-bold tracking-tight text-6xl text-white'>
+        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5'>
+          <h1 className='font-bold tracking-tight text-6xl text-white mb-5'>
             Deaf-i
           </h1>
           <h3 className='font-semibold tracking-tight text-3xl text-white'>

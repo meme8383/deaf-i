@@ -14,9 +14,12 @@ const Person = ({ name, description, image, swapped, role }: PersonProps) => {
   return (
     <div className='md:grid md:grid-cols-2 md:gap-3 mt-5'>
       <div
-        className={cn('flex h-96 mt-5 md:mt-0 items-center justify-center', {
-          'md:order-2': swapped,
-        })}
+        className={cn(
+          'flex h-72 lg:h-96 mt-5 md:mt-0 items-center justify-center',
+          {
+            'md:order-2': swapped,
+          }
+        )}
       >
         <div className='relative h-full aspect-square rounded-full overflow-hidden'>
           <Image
