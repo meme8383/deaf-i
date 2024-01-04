@@ -4,6 +4,7 @@ import { Icons } from './Icons';
 import { buttonVariants } from './ui/button';
 import NavItem from './NavItem';
 import MobileNav from './MobileNav';
+import { Instagram } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -27,7 +28,10 @@ const Navbar = () => {
                 </div>
               </div>
               <div className='ml-auto flex items-center mr-4'>
-                <div className='hidden md:flex md:flex-1 md:space-x-6'>
+                <div className='hidden md:flex md:flex-1 md:space-x-4'>
+                  <Link href='#' className='my-auto'>
+                    <Instagram className='text-muted-foreground hover:text-foreground' />
+                  </Link>
                   <Link
                     href='/donate'
                     className={buttonVariants({ variant: 'default' })}
