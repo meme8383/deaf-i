@@ -70,11 +70,11 @@ export default function Page() {
 
       <section className='bg-slate-200 my-5 py-2'>
         <MaxWidthWrapper>
-          <div className='text-foreground md:mx-10'>
+          <div className='text-foreground md:mx-10 py-5'>
             <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
               Our People
             </h1>
-            <div className='mt-5'>
+            <div className='mt-5 md:grid md:grid-cols-2 md:gap-5'>
               {people.map((person, i) => (
                 <Person
                   key={i}
