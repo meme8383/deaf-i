@@ -29,7 +29,11 @@ const Navbar = () => {
               </div>
               <div className='ml-auto flex items-center mr-4'>
                 <div className='hidden md:flex md:flex-1 md:space-x-4'>
-                  <Link href='#' className='my-auto'>
+                  <Link
+                    target='_blank'
+                    href='https://www.instagram.com/deafi_official'
+                    className='my-auto'
+                  >
                     <Instagram className='text-muted-foreground hover:text-foreground' />
                   </Link>
                   <Link
