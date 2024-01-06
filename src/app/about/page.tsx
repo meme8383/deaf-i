@@ -15,7 +15,7 @@ const people = [
     role: 'Co-Founder, President',
     image: '/about/jad-crop.jpg',
     description:
-      'Jad Bader is currently studying neuroscience at Wahington University intending to go to medical school to become an Otolaryngologist. He is currently doing clinical neuroscience laboratory research at WashU’s medical campus and is leading the next generation of his scholarship cohort the “Danforth Scholars” as their seminar leader.',
+      'Jad Bader is currently studying neuroscience at Wahington University intending to go to medical school to become an Otolaryngologist. He is currently doing clinical neuroscience laboratory research at WashU\'s medical campus and is leading the next generation of his scholarship cohort the "Danforth Scholars" as their seminar leader.',
   },
   {
     name: 'Barbara Bader',
@@ -29,7 +29,7 @@ const people = [
     role: 'CTO, Web Developer',
     image: '/about/eduard-crop.jpg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      "Eduard Tanase is a computer engineering student at Purdue University. He is a Software Lead of Purdue's IEEE Neurotech Committee and is currently doing research in the field of computational neuroscience. He intends to pursue a master's degree in computer science after completing his undergraduate studies.",
   },
 ];
 
