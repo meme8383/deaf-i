@@ -6,7 +6,8 @@ const items = [
   {
     image: '/resources/cochlear.png',
     href: 'https://www.cochlear.com/us/en/home',
-    description: 'xx',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     title: 'Cochlear',
   },
   {
@@ -49,8 +50,8 @@ const Item = ({
           {title}
         </h1>
       </div> */}
-      <div className='text-lg font-medium mx-3'>
-        <p className=''>{description}</p>
+      <div className='mx-3 mt-3'>
+        <p className='text-lg font-medium text-slate-600'>{description}</p>
       </div>
     </div>
   </Link>
