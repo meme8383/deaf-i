@@ -10,7 +10,7 @@ export const Icons = {
       xmlns='http://www.w3.org/2000/svg'
     >
       <g transform='translate(-29.375 -47.044)'>
-        <g stroke-width='.26458'>
+        <g strokeWidth='.26458'>
           <path d='m121.1 63.085h10.939v3.5967h-10.939z' />
           <path d='m99.256 48.723v33.189h4.0432v-15.18h13.965v-3.6463h-13.965v-10.716h15.751v-3.6463z' />
           <path d='m77.452 48.723v33.189h-21.059v-3.6463h17.016v-11.534h-14.312v-3.6463h14.312v-10.716h-16.098v-3.6463z' />
@@ -23,40 +23,40 @@ export const Icons = {
             width='3.8365'
             height='33.205'
             ry='0'
-            stroke-width='.26458'
+            strokeWidth='.26458'
           />
           <rect
             x='59.097'
             y='63.085'
             width='58.167'
             height='3.6463'
-            stroke-width='.24671'
+            strokeWidth='.24671'
           />
           <path
             d='m73.409 81.912 13.221-33.189h3.4975l13.171 33.189h-4.0432l-10.815-28.029-10.988 28.029z'
-            stroke-width='.26458'
+            strokeWidth='.26458'
           />
           <rect
             x='56.393'
             y='48.723'
             width='17.016'
             height='3.6463'
-            stroke-width='.26458'
+            strokeWidth='.26458'
           />
         </g>
         <path
           d='m147.56 64.686s-3.6009 2.3484-4.4878 7.0744c-1.211 6.4533 2.6689 9.954 2.6689 9.954'
           fill='none'
           stroke='#000'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='4'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='4'
         />
         <path
           d='m144.32 69.567s-6.0119-3.3796-5.3806-8.5153c0.75188-6.1165 8.5452-8.2707 8.5452-8.2707'
           fill='none'
           stroke='#000'
-          stroke-width='1.5'
+          strokeWidth='1.5'
         />
         <circle cx='147.49' cy='52.781' r='5.7365' />
         <circle
@@ -65,25 +65,25 @@ export const Icons = {
           r='2.9052'
           fill='none'
           stroke='#fefefe'
-          stroke-linecap='round'
-          stroke-width='.51889'
+          strokeLinecap='round'
+          strokeWidth='.51889'
         />
         <text
           x='27.946217'
           y='122.10187'
           fill='#000000'
-          font-family="'Britannic Bold'"
-          font-size='50.8px'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='1.5'
+          fontFamily="'Britannic Bold'"
+          fontSize='50.8px'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='1.5'
           xml-space='preserve'
         >
           <tspan
             x='27.946217'
             y='122.10187'
-            font-family="'Britannic Bold'"
-            stroke-width='1.5'
+            fontFamily="'Britannic Bold'"
+            strokeWidth='1.5'
           />
         </text>
       </g>

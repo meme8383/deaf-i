@@ -21,13 +21,8 @@ const Person = ({ name, description, image, swapped, role }: PersonProps) => {
           }
         )}
       >
-        <div className='relative h-full aspect-square rounded-full overflow-hidden'>
-          <Image
-            src={image}
-            alt={`picture of ${name}`}
-            fill
-            objectFit='contain'
-          />
+        <div className='relative h-full aspect-square rounded-full overflow-hidden object-contain'>
+          <Image src={image} alt={`picture of ${name}`} fill />
         </div>
       </div>
       <div className='w-full h-full'>

@@ -31,6 +31,13 @@ const people = [
     description:
       "Eduard Tanase is a computer engineering student at Purdue University. He is a Software Lead of Purdue's IEEE Neurotech Committee and is currently doing research in the field of computational neuroscience. He intends to pursue a master's degree in computer science after completing his undergraduate studies.",
   },
+  {
+    name: 'Elena Kaufman',
+    role: 'Social Media Marketing Director',
+    image: '/about/ellie.jpg',
+    description:
+      'Elena Kaufman is an undergraduate student at Washington University in St. Louis, studying Psychological & Brain Sciences, with plans to pursue her Doctorate in Occupational Therapy. Growing up with a mother with unilateral hearing loss, Elena became dedicated to fostering the change her mother hoped to see by aiding in efforts towards awareness and advocacy. Her active engagement in the Students’ Association of Speech & Hearing Sciences involves community projects that aim to destigmatize hearing loss and promote inclusivity, ultimately aiming to bridge the gap between access and accessibility.',
+  },
 ];
 
 export default function Page() {
@@ -46,13 +53,13 @@ export default function Page() {
               <p className='leading-7 mt-4'>
                 Deaf-i&apos;s purpose is to further awareness of the unique
                 needs of cochlear implant recipients through advocacy. We aim to
-                improve awareness by promoting education, outreach equity and
+                improve awareness by promoting education, outreach, equity, and
                 support. We strive to create a community that fosters
                 inclusivity, empowerment, and accessibility for all. Our
-                programs include but are not limited to provide free lectures
-                and resources that to benefit quality of life cochlear implant
-                recipients to raise social consciousness about the cause on a
-                local and global level and to hold fundraising events to
+                programs include but are not limited to providing free lectures
+                and resources that benefit the quality of life of cochlear
+                implant recipients, raising social consciousness about the cause
+                on a local and global level, and holding fundraising events to
                 maximize our impact.
               </p>
             </div>
