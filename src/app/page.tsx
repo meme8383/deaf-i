@@ -22,9 +22,7 @@ export default function Home() {
         </div>
       </div>
       <MaxWidthWrapper>
-        <div className='text-center'>
-          <h1 className='text-9xl font-bold tracking-tight'>WIP :)</h1>
-        </div>
+        <div className='text-center'></div>
       </MaxWidthWrapper>
     </>
   );
