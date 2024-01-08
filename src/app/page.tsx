@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div
         id='home'
-        className='relative w-full h-dvh md:h-[512px] items-center justify-center scroll-m-20'
+        className='relative w-full h-lvh md:h-[512px] items-center justify-center scroll-m-20'
       >
         <Image
           src='/home/Forest Background.jpg'
