@@ -8,7 +8,10 @@ import Resources from '@/components/Resources/Resources';
 export default function Home() {
   return (
     <>
-      <div className='relative w-full h-dvh md:h-[512px] items-center justify-center'>
+      <div
+        id='home'
+        className='relative w-full h-dvh md:h-[512px] items-center justify-center scroll-m-20'
+      >
         <Image
           src='/home/Forest Background.jpg'
           alt='food bank group photo'
@@ -37,7 +40,7 @@ export default function Home() {
       <div id='faq' className='scroll-m-20'>
         <MaxWidthWrapper>
           <div className='flex'>
-            <h1 className='text-center text-4xl border-b font-semibold mx-auto px-10 mb-3'>
+            <h1 className='text-center text-4xl border-b font-semibold mx-auto md:px-10 mb-3'>
               Frequently Asked Questions
             </h1>
           </div>
@@ -47,7 +50,7 @@ export default function Home() {
       <div id='resources' className='scroll-m-20 bg-slate-200 my-5 py-2'>
         <MaxWidthWrapper>
           <div className='flex'>
-            <h1 className='text-center text-4xl border-b font-semibold mx-auto px-10 border-slate-400'>
+            <h1 className='text-center text-4xl border-b font-semibold mx-auto md:px-10 border-slate-400'>
               Resources
             </h1>
           </div>

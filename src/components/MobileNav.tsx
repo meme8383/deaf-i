@@ -8,23 +8,23 @@ import { cn } from '@/lib/utils';
 const navItems = [
   {
     name: 'Home',
-    href: '#',
+    href: '/#home',
   },
   {
     name: 'About Us',
-    href: '#about-us',
+    href: '/#about-us',
   },
   {
     name: 'FAQ',
-    href: '#faq',
+    href: '/#faq',
   },
   {
     name: 'Resources',
-    href: '#resources',
+    href: '/#resources',
   },
   {
     name: 'Contact Us',
-    href: '#contact',
+    href: '/#contact',
   },
 ];
 
@@ -63,7 +63,7 @@ const MobileNav = () => {
           ))}
           <SheetTrigger asChild>
             <Link
-              href='#donate'
+              href='/#donate'
               className={cn(
                 buttonVariants({
                   variant: 'link',
