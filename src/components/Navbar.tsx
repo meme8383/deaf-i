@@ -14,17 +14,17 @@ const Navbar = () => {
           <div className='border-b border-gray-200'>
             <div className='flex h-16 items-center px-3 md:px-0'>
               <div className='ml-4 flex'>
-                <Link href='/'>
+                <Link href='/#home'>
                   <Icons.logo className='h-10' />
                 </Link>
               </div>
 
               <div className='hidden z-50 ml-4 lg:ml-8 md:block md:self-stretch'>
                 <div className='flex lg:gap-3 h-full'>
-                  <NavItem name='About Us' link='/about' />
-                  <NavItem name='FAQ' link='/faq' />
-                  <NavItem name='Resources' link='/resources' />
-                  <NavItem name='Contact Us' link='/contact' />
+                  <NavItem name='About Us' link='/#about-us' />
+                  <NavItem name='FAQ' link='/#faq' />
+                  <NavItem name='Resources' link='/#resources' />
+                  <NavItem name='Contact Us' link='/#contact' />
                 </div>
               </div>
               <div className='ml-auto flex items-center mr-4'>
@@ -37,7 +37,7 @@ const Navbar = () => {
                     <Instagram className='text-muted-foreground hover:text-foreground' />
                   </Link>
                   <Link
-                    href='/donate'
+                    href='/#donate'
                     className={buttonVariants({ variant: 'default' })}
                   >
                     Donate
