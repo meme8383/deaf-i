@@ -1,6 +1,5 @@
-import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import Person from '@/components/Person';
-import Image from 'next/image';
+import React from 'react';
+import Person from './Person';
 
 const people = [
   {
@@ -40,62 +39,26 @@ const people = [
   },
 ];
 
-export default function Page() {
+const People = () => {
   return (
-    <>
-      <MaxWidthWrapper>
-        <section>
-          <div className='text-foreground md:mx-10 mt-5 md:grid md:grid-cols-2 md:gap-3'>
-            <div>
-              <h1 className='text-3xl font-semibold tracking-tight border-b'>
-                Mission Statement
-              </h1>
-              <p className='leading-7 mt-4'>
-                Deaf-i&apos;s purpose is to further awareness of the unique
-                needs of cochlear implant recipients through advocacy. We aim to
-                improve awareness by promoting education, outreach, equity, and
-                support. We strive to create a community that fosters
-                inclusivity, empowerment, and accessibility for all. Our
-                programs include but are not limited to providing free lectures
-                and resources that benefit the quality of life of cochlear
-                implant recipients, raising social consciousness about the cause
-                on a local and global level, and holding fundraising events to
-                maximize our impact.
-              </p>
-            </div>
-            <div className='relative h-96 mt-2 md:mt-0'>
-              <Image
-                className='object-contain relative'
-                src='/about/FullSizeRender.jpg'
-                alt='jad'
-                fill
-              ></Image>
-            </div>
-          </div>
-        </section>
-      </MaxWidthWrapper>
-
-      <section className='bg-slate-200 my-5 py-2'>
-        <MaxWidthWrapper>
-          <div className='text-foreground md:mx-10 py-5'>
-            <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
-              Our People
-            </h1>
-            <div className='mt-5 md:grid md:grid-cols-2 md:gap-5'>
-              {people.map((person, i) => (
-                <Person
-                  key={i}
-                  role={person.role}
-                  name={person.name}
-                  image={person.image}
-                  description={person.description}
-                  swapped={i % 2 === 1}
-                />
-              ))}
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </section>
-    </>
+    <div className='text-foreground md:mx-10 py-5'>
+      <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
+        Our People
+      </h1>
+      <div className='mt-5 md:grid md:grid-cols-2 md:gap-5'>
+        {people.map((person, i) => (
+          <Person
+            key={i}
+            role={person.role}
+            name={person.name}
+            image={person.image}
+            description={person.description}
+            swapped={i % 2 === 1}
+          />
+        ))}
+      </div>
+    </div>
   );
-}
+};
+
+export default People;
