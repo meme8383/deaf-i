@@ -1,5 +1,8 @@
-import React from 'react';
-import Person from './Person';
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 const people = [
   {
@@ -40,22 +43,43 @@ const people = [
 ];
 
 const People = () => {
+  const [selected, setSelected] = useState(0);
+
   return (
     <div className='text-foreground md:mx-10 py-5'>
       <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
         Our People
       </h1>
-      <div className='mt-5 md:grid md:grid-cols-2 md:gap-5'>
+      <div className={`flex mt-5 w-full h-56 max-w-3xl mx-auto`}>
         {people.map((person, i) => (
-          <Person
+          <button
+            onClick={() => setSelected(i)}
             key={i}
-            role={person.role}
-            name={person.name}
-            image={person.image}
-            description={person.description}
-            swapped={i % 2 === 1}
-          />
+            className={cn(
+              'w-1/6 relative items-center justify-center m-auto aspect-square rounded-full overflow-hidden mx-1 md:mx-2 lg:mx-3 duration-300 ease-in-out',
+              {
+                'hover:scale-110': selected !== i,
+                'w-2/6': selected === i,
+              }
+            )}
+          >
+            <Image
+              className='object-contain'
+              src={person.image}
+              fill
+              alt='person image'
+            />
+          </button>
         ))}
+      </div>
+      <div className='mt-5'>
+        <h1 className='text-2xl font-semibold tracking-tight border-b border-b-slate-400'>
+          {people[selected].name}
+          <span className='text-lg font-sans text-muted-foreground ml-3'>
+            {people[selected].role}
+          </span>
+        </h1>
+        <p className='leading-7 mt-4'>{people[selected].description}</p>
       </div>
     </div>
   );
