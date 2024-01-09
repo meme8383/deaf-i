@@ -107,7 +107,7 @@ const People = () => {
         <div className='relative lg:hidden'>
           <button
             className={cn(
-              'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-150',
+              'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300',
               {
                 'opacity-0': fade,
                 'opacity-100': !fade,
