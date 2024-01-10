@@ -79,6 +79,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                       className='object-contain'
                       field={person.picture}
                       fill
+                      loading='eager'
                     />
                   </button>
                 ))}

@@ -1,7 +1,14 @@
+'use client';
+
 import { Content } from '@prismicio/client';
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicText, SliceComponentProps } from '@prismicio/react';
-import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import type SwiperType from 'swiper';
+import { useState } from 'react';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 /**
  * Props for `Hero`.
@@ -12,6 +19,8 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -19,14 +28,31 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div
         id='home'
-        className='relative w-full h-lvh md:h-[512px] items-center justify-center scroll-m-20'
+        className='relative w-full h-lvh md:h-[512px] items-center justify-center scroll-m-20 bg-gray-500'
       >
-        <PrismicNextImage
-          field={slice.primary.image}
-          fill
-          className='brightness-50 bg-no-repeat object-cover'
-        />
-        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5'>
+        <Swiper
+          onSwiper={(swiper) => setSwiper(swiper)}
+          spaceBetween={0}
+          modules={[Pagination, Autoplay]}
+          slidesPerView={1}
+          className='w-full h-full'
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+        >
+          {slice.items.map((item, index) => (
+            <SwiperSlide key={index} className='brightness-50 bg-no-repeat'>
+              <PrismicNextImage
+                loading='eager'
+                field={item.image}
+                fill
+                className='object-cover object-center -z-10'
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5 z-50'>
           <h1 className='font-bold tracking-tight text-6xl text-white mb-5'>
             Deaf-i
           </h1>
