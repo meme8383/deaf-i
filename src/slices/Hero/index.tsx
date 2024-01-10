@@ -6,9 +6,10 @@ import { PrismicText, SliceComponentProps } from '@prismicio/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 import type SwiperType from 'swiper';
 import { useState } from 'react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
 /**
  * Props for `Hero`.
@@ -32,14 +33,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       >
         <Swiper
           onSwiper={(swiper) => setSwiper(swiper)}
-          spaceBetween={0}
-          modules={[Pagination, Autoplay]}
+          spaceBetween={50}
+          modules={[Pagination, Autoplay, EffectFade]}
           slidesPerView={1}
           className='w-full h-full'
           autoplay={{
-            delay: 5000,
+            delay: 10000,
             disableOnInteraction: false,
           }}
+          effect={'fade'}
         >
           {slice.items.map((item, index) => (
             <SwiperSlide key={index} className='brightness-50 bg-no-repeat'>
@@ -52,7 +54,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5 z-50'>
+        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5 z-10'>
           <h1 className='font-bold tracking-tight text-6xl text-white mb-5'>
             Deaf-i
           </h1>
