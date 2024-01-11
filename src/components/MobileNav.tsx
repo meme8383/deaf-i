@@ -49,20 +49,20 @@ const MobileNavItem = ({ name, href }: { name: string; href: string }) => {
 const MobileNav = () => {
   return (
     <Sheet>
-      <SheetTrigger className='group -m-2 flex items-center p-2'>
+      <SheetTrigger className="group -m-2 flex items-center p-2">
         <Menu
           aria-hidden
-          className='h-10 w-10 flex-shrink-0 text-gray-500 group-hover:text-gray-700'
+          className="h-10 w-10 flex-shrink-0 text-gray-500 group-hover:text-gray-700"
         />
       </SheetTrigger>
-      <SheetContent className='flex w-full flex-col sm:max-w-lg'>
-        <div className='flex h-full flex-col items-center justify-center space-y-10'>
+      <SheetContent className="flex w-full flex-col sm:max-w-lg">
+        <div className="flex h-full flex-col items-center justify-center space-y-10">
           {navItems.map((item) => (
             <MobileNavItem key={item.name} name={item.name} href={item.href} />
           ))}
           <SheetTrigger asChild>
             <Link
-              href='/#donate'
+              href="/#donate"
               className={cn(
                 buttonVariants({
                   variant: 'link',

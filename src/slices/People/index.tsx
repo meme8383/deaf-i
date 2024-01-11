@@ -45,13 +45,13 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className='bg-slate-200 my-5 py-2'>
+      <div className="bg-slate-200 my-5 py-2">
         <MaxWidthWrapper>
-          <div className='text-foreground md:mx-10 py-5'>
-            <h1 className='w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl'>
+          <div className="text-foreground md:mx-10 py-5">
+            <h1 className="w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl">
               Our People
             </h1>
-            <div className='flex mt-5 w-full h-64 items-center justify-center'>
+            <div className="flex mt-5 w-full h-64 items-center justify-center">
               <button
                 className={cn('my-auto', {
                   'text-slate-300': selected === 0,
@@ -62,7 +62,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
               >
                 <ChevronLeft size={48} />
               </button>
-              <div className='hidden lg:flex'>
+              <div className="hidden lg:flex">
                 {people.map((person, i) => (
                   <button
                     onClick={() => setSelected(i)}
@@ -76,15 +76,15 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                     )}
                   >
                     <PrismicNextImage
-                      className='object-contain'
+                      className="object-contain"
                       field={person.picture}
                       fill
-                      loading='eager'
+                      loading="eager"
                     />
                   </button>
                 ))}
               </div>
-              <div className='relative lg:hidden'>
+              <div className="relative lg:hidden">
                 <button
                   className={cn(
                     'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300',
@@ -95,7 +95,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                   )}
                 >
                   <PrismicNextImage
-                    className='object-contain'
+                    className="object-contain"
                     field={people[textIndex].picture}
                     fill
                   />
@@ -118,13 +118,13 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                 'opacity-100': !fade,
               })}
             >
-              <h1 className='text-2xl font-semibold tracking-tight border-b border-b-slate-400'>
+              <h1 className="text-2xl font-semibold tracking-tight border-b border-b-slate-400">
                 <PrismicText field={people[textIndex].name} />
-                <span className='text-lg font-sans text-muted-foreground ml-3'>
+                <span className="text-lg font-sans text-muted-foreground ml-3">
                   <PrismicText field={people[textIndex].role} />
                 </span>
               </h1>
-              <p className='leading-7 mt-4'>
+              <p className="leading-7 mt-4">
                 <PrismicText field={people[textIndex].description} />
               </p>
             </div>

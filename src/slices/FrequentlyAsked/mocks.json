@@ -1,42 +1,42 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"question",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Occaecat excepteur ut culpa et. Voluptate enim ad ullamco aliquip do adipisicing in consequat esse consectetur ex mollit. Nostrud velit ipsum qui ex eu Lorem ex aliqua."
-									}
-								}
-							]
-						}
-					],
-					[
-						"answer",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Culpa officia mollit sit ad minim mollit. Id Lorem eiusmod consequat mollit dolor eu esse. Adipisicing enim commodo elit pariatur aute veniam cupidatat magna consequat."
-									}
-								}
-							]
-						}
-					]
-				]
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {},
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "question",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Occaecat excepteur ut culpa et. Voluptate enim ad ullamco aliquip do adipisicing in consequat esse consectetur ex mollit. Nostrud velit ipsum qui ex eu Lorem ex aliqua."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "answer",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Culpa officia mollit sit ad minim mollit. Id Lorem eiusmod consequat mollit dolor eu esse. Adipisicing enim commodo elit pariatur aute veniam cupidatat magna consequat."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
 ]

@@ -1,80 +1,80 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"name",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Tempor voluptate deserunt incididunt adipisicing fugiat velit proident velit voluptate est aliquip. Et aliqua mollit id velit veniam aliqua minim. Duis eiusmod proident qui cillum do veniam ipsum exercitation eu aliquip ut commodo culpa labore pariatur."
-									}
-								}
-							]
-						}
-					],
-					[
-						"role",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Laboris officia sunt officia. Ea velit mollit nulla amet duis commodo do nostrud. In elit sit deserunt deserunt aliquip occaecat nostrud in nisi reprehenderit sit."
-									}
-								}
-							]
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Enim sunt nostrud in qui aliqua. Ut consequat sint irure ipsum."
-									}
-								}
-							]
-						}
-					],
-					[
-						"picture",
-						{
-							"__TYPE__": "ImageContent",
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
-								"width": 3935,
-								"height": 5894
-							},
-							"url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?rect=0%2C980%2C3935%2C3935&w=480&h=480",
-							"width": 480,
-							"height": 480,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 980
-								},
-								"background": "transparent"
-							},
-							"thumbnails": {}
-						}
-					]
-				]
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {},
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "name",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Tempor voluptate deserunt incididunt adipisicing fugiat velit proident velit voluptate est aliquip. Et aliqua mollit id velit veniam aliqua minim. Duis eiusmod proident qui cillum do veniam ipsum exercitation eu aliquip ut commodo culpa labore pariatur."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "role",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Laboris officia sunt officia. Ea velit mollit nulla amet duis commodo do nostrud. In elit sit deserunt deserunt aliquip occaecat nostrud in nisi reprehenderit sit."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Enim sunt nostrud in qui aliqua. Ut consequat sint irure ipsum."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "picture",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636",
+                "width": 3935,
+                "height": 5894
+              },
+              "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?rect=0%2C980%2C3935%2C3935&w=480&h=480",
+              "width": 480,
+              "height": 480,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 980
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ]
+        ]
+      }
+    ]
+  }
 ]

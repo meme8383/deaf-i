@@ -17,30 +17,30 @@ const Resources = ({ slice }: ResourcesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div id='resources' className='scroll-m-20 bg-slate-200 my-5 py-2'>
+      <div id="resources" className="scroll-m-20 bg-slate-200 my-5 py-2">
         <MaxWidthWrapper>
-          <div className='flex'>
-            <h1 className='text-center text-4xl border-b font-semibold mx-auto md:px-10 border-slate-400'>
+          <div className="flex">
+            <h1 className="text-center text-4xl border-b font-semibold mx-auto md:px-10 border-slate-400">
               Resources
             </h1>
           </div>
-          <div className='md:grid md:grid-cols-3 md:gap-3 lg:gap-8 mt-5'>
+          <div className="md:grid md:grid-cols-3 md:gap-3 lg:gap-8 mt-5">
             {slice.items.map((item, i) => (
               <PrismicNextLink
                 field={item.link}
-                rel='noopener noreferrer'
+                rel="noopener noreferrer"
                 key={i}
               >
-                <div className='bg-slate-100 mb-5 flex flex-col rounded-lg h-52 border border-slate-400 overflow-hidden hover:scale-105 duration-300 ease-in-out shadow hover:shadow-xl'>
-                  <div className='mt-2 relative w-full overflow-hidden h-16'>
+                <div className="bg-slate-100 mb-5 flex flex-col rounded-lg h-52 border border-slate-400 overflow-hidden hover:scale-105 duration-300 ease-in-out shadow hover:shadow-xl">
+                  <div className="mt-2 relative w-full overflow-hidden h-16">
                     <PrismicNextImage
-                      className='object-contain w-full h-full'
+                      className="object-contain w-full h-full"
                       field={item.logo}
                       fill
                     />
                   </div>
-                  <div className='mx-3 mt-3'>
-                    <p className='text-lg font-medium text-slate-600'>
+                  <div className="mx-3 mt-3">
+                    <p className="text-lg font-medium text-slate-600">
                       <PrismicText field={item.description} />
                     </p>
                   </div>

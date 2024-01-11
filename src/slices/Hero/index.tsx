@@ -25,13 +25,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div
-        id='home'
-        className='relative w-full h-lvh md:h-[512px] items-center justify-center scroll-m-20 bg-gray-500'
+        id="home"
+        className="relative w-full h-lvh md:h-[512px] items-center justify-center scroll-m-20 bg-gray-500"
       >
         <Swiper
           modules={[Pagination, Autoplay, EffectFade]}
           slidesPerView={1}
-          className='w-full h-full'
+          className="w-full h-full"
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -40,21 +40,21 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           speed={1500}
         >
           {slice.items.map((item, index) => (
-            <SwiperSlide key={index} className='brightness-50'>
+            <SwiperSlide key={index} className="brightness-50">
               <PrismicNextImage
-                loading='eager'
+                loading="eager"
                 field={item.image}
                 fill
-                className='object-cover object-center -z-10'
+                className="object-cover object-center -z-10"
               />
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className='absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5 z-10'>
-          <h1 className='font-bold tracking-tight text-6xl text-white mb-5'>
+        <div className="absolute h-full w-full justify-center md:items-center flex flex-col top-0 px-5 z-10">
+          <h1 className="font-bold tracking-tight text-6xl text-white mb-5">
             Deaf-i
           </h1>
-          <h3 className='font-semibold tracking-tight text-3xl text-white'>
+          <h3 className="font-semibold tracking-tight text-3xl text-white">
             <PrismicText field={slice.primary.subheader} />
           </h3>
         </div>
