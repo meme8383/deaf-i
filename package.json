@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md}\"",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@prismicio/client": "^7.3.1",
