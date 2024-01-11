@@ -1,10 +1,9 @@
-import React from 'react';
+import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Icons } from './Icons';
-import { buttonVariants } from './ui/button';
-import NavItem from './NavItem';
 import MobileNav from './MobileNav';
-import { Instagram } from 'lucide-react';
+import NavItem from './NavItem';
+import { buttonVariants } from './ui/button';
 
 const Navbar = () => {
   return (
