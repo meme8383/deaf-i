@@ -33,15 +33,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       >
         <Swiper
           onSwiper={(swiper) => setSwiper(swiper)}
-          spaceBetween={50}
           modules={[Pagination, Autoplay, EffectFade]}
           slidesPerView={1}
           className='w-full h-full'
           autoplay={{
-            delay: 10000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           effect={'fade'}
+          speed={1500}
         >
           {slice.items.map((item, index) => (
             <SwiperSlide key={index} className='brightness-50 bg-no-repeat'>
