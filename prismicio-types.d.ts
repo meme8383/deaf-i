@@ -5,6 +5,7 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | ContactUsSlice
   | PeopleSlice
   | ResourcesSlice
   | FrequentlyAskedSlice
@@ -119,6 +120,51 @@ type AboutUsSliceVariation = AboutUsSliceDefault;
 export type AboutUsSlice = prismic.SharedSlice<
   'about_us',
   AboutUsSliceVariation
+>;
+
+/**
+ * Primary content in *ContactUs → Primary*
+ */
+export interface ContactUsSliceDefaultPrimary {
+  /**
+   * Email field in *ContactUs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_us.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ContactUsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactUs*
+ */
+type ContactUsSliceVariation = ContactUsSliceDefault;
+
+/**
+ * ContactUs Shared Slice
+ *
+ * - **API ID**: `contact_us`
+ * - **Description**: ContactUs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactUsSlice = prismic.SharedSlice<
+  'contact_us',
+  ContactUsSliceVariation
 >;
 
 /**
@@ -388,6 +434,10 @@ declare module '@prismicio/client' {
       AboutUsSliceDefaultPrimary,
       AboutUsSliceVariation,
       AboutUsSliceDefault,
+      ContactUsSlice,
+      ContactUsSliceDefaultPrimary,
+      ContactUsSliceVariation,
+      ContactUsSliceDefault,
       FrequentlyAskedSlice,
       FrequentlyAskedSliceDefaultItem,
       FrequentlyAskedSliceVariation,
