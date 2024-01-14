@@ -31,7 +31,7 @@ const Resources = ({ slice }: ResourcesProps): JSX.Element => {
                 rel="noopener noreferrer"
                 key={i}
               >
-                <div className="bg-slate-100 mb-5 flex flex-col rounded-lg h-52 border border-slate-400 overflow-hidden hover:scale-105 duration-300 ease-in-out shadow hover:shadow-xl">
+                <div className="bg-white mb-5 flex flex-col rounded-lg h-72  border-slate-400 overflow-hidden hover:scale-105 duration-300 ease-in-out shadow hover:shadow-xl">
                   <div className="mt-2 relative w-full overflow-hidden h-16">
                     <PrismicNextImage
                       className="object-contain w-full h-full"
