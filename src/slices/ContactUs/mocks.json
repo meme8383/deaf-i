@@ -1,14 +1,14 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"email": {
-				"__TYPE__": "FieldContent",
-				"value": "cloth",
-				"type": "Text"
-			}
-		},
-		"items": []
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "cloth",
+        "type": "Text"
+      }
+    },
+    "items": []
+  }
 ]

@@ -1,6 +1,10 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { Content } from '@prismicio/client';
 import { PrismicText, SliceComponentProps } from '@prismicio/react';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 /**
  * Props for `FrequentlyAsked`.
@@ -34,6 +38,18 @@ const FrequentlyAsked = ({ slice }: FrequentlyAskedProps): JSX.Element => {
               </p>
             </div>
           ))}
+          <div className="flex w-full items-end">
+            <Link
+              className={cn(
+                buttonVariants({ variant: 'link' }),
+                'ml-auto gap-1.5 text-lg'
+              )}
+              href="/faq"
+            >
+              Read More
+              <ArrowRight size={20} />
+            </Link>
+          </div>
         </MaxWidthWrapper>
       </div>
     </section>
