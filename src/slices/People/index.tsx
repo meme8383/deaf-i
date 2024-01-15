@@ -51,7 +51,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
             <h1 className="w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl">
               Our People
             </h1>
-            <div className="flex mt-5 w-full h-64 items-center justify-center">
+            <div className="flex mt-5 w-full h-56 items-center justify-center">
               <button
                 className={cn('my-auto', {
                   'text-slate-300': selected === 0,
@@ -62,16 +62,16 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
               >
                 <ChevronLeft size={48} />
               </button>
-              <div className="hidden lg:flex">
+              <div className="hidden xl:flex">
                 {people.map((person, i) => (
                   <button
                     onClick={() => setSelected(i)}
                     key={i}
                     className={cn(
-                      'h-36 relative items-center justify-center m-auto aspect-square rounded-full overflow-hidden mx-1 xl:mx-3 duration-300 ease-in-out',
+                      'h-28 relative items-center justify-center m-auto aspect-square rounded-full overflow-hidden mx-1 2xl:mx-3 duration-300 ease-in-out bg-gray-400',
                       {
                         'hover:scale-110': selected !== i,
-                        'h-64': selected === i,
+                        'h-56': selected === i,
                       }
                     )}
                   >
@@ -84,7 +84,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                   </button>
                 ))}
               </div>
-              <div className="relative lg:hidden">
+              <div className="relative xl:hidden">
                 <button
                   className={cn(
                     'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300',
