@@ -34,9 +34,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div
         id="home"
-        className="relative w-full h-[50vw] max-h-[1000px] scroll-m-20 bg-slate-300 group"
+        className="relative w-full h-[50vw] scroll-m-20 bg-slate-300 group"
       >
-        <div className="mx-auto w-full max-w-[2000px] h-full">
+        <div className="mx-auto w-full h-full">
           <Swiper
             modules={[Pagination, Autoplay, Navigation]}
             slidesPerView={1}
@@ -63,7 +63,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex flex-col absolute h-full w-full max-w-[2000px] top-0 z-10">
+          <div className="flex flex-col absolute h-full w-full top-0 z-10">
             <Progress value={(1 - progress) * 100} />
             <div className="flex h-full w-full">
               <div className="flex flex-col h-full justify-center">
