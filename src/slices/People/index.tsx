@@ -87,7 +87,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
               <div className="relative xl:hidden">
                 <button
                   className={cn(
-                    'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300',
+                    'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300 bg-gray-400',
                     {
                       'opacity-0': fade,
                       'opacity-100': !fade,
