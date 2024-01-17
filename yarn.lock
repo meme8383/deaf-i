@@ -803,6 +803,11 @@
   dependencies:
     server-only "^0.0.1"
 
+"@vercel/speed-insights@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vercel/speed-insights/-/speed-insights-1.0.4.tgz#b52a66ac041e7d64ab15056be62695b1d7327d9e"
+  integrity sha512-Q7O0bnV11KUqNKAKA984YWIGxCjqgOuJdwH1cdItqlkUVTLbIm8BhObro6hJobGMSUHm+z7xjQ0YbC8ps1ekDg==
+
 "@wooorm/starry-night@^1.6.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@wooorm/starry-night/-/starry-night-1.7.0.tgz#f3d3c2dcfd2d5857c8cf1354920995c57fb9de1b"
