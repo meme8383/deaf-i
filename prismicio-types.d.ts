@@ -4,6 +4,67 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type FaqDocumentDataSlicesSlice = FaqLargeSlice;
+
+/**
+ * Content for FAQ documents
+ */
+interface FaqDocumentData {
+  /**
+   * Slice Zone field in *FAQ*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FaqDocumentDataSlicesSlice> /**
+   * Meta Description field in *FAQ*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: faq.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *FAQ*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *FAQ*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: faq.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * FAQ document from Prismic
+ *
+ * - **API ID**: `faq`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FaqDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<FaqDocumentData>, 'faq', Lang>;
+
 type HomepageDocumentDataSlicesSlice =
   | ContactUsSlice
   | PeopleSlice
@@ -75,7 +136,7 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument;
+export type AllDocumentTypes = FaqDocument | HomepageDocument;
 
 /**
  * Primary content in *AboutUs → Primary*
@@ -165,6 +226,61 @@ type ContactUsSliceVariation = ContactUsSliceDefault;
 export type ContactUsSlice = prismic.SharedSlice<
   'contact_us',
   ContactUsSliceVariation
+>;
+
+/**
+ * Primary content in *FaqLarge → Items*
+ */
+export interface FaqLargeSliceDefaultItem {
+  /**
+   * Question field in *FaqLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_large.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *FaqLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_large.items[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FaqLarge Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqLargeSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  Simplify<FaqLargeSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *FaqLarge*
+ */
+type FaqLargeSliceVariation = FaqLargeSliceDefault;
+
+/**
+ * FaqLarge Shared Slice
+ *
+ * - **API ID**: `faq_large`
+ * - **Description**: FaqLarge
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqLargeSlice = prismic.SharedSlice<
+  'faq_large',
+  FaqLargeSliceVariation
 >;
 
 /**
@@ -426,6 +542,9 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
+      FaqDocument,
+      FaqDocumentData,
+      FaqDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -438,6 +557,10 @@ declare module '@prismicio/client' {
       ContactUsSliceDefaultPrimary,
       ContactUsSliceVariation,
       ContactUsSliceDefault,
+      FaqLargeSlice,
+      FaqLargeSliceDefaultItem,
+      FaqLargeSliceVariation,
+      FaqLargeSliceDefault,
       FrequentlyAskedSlice,
       FrequentlyAskedSliceDefaultItem,
       FrequentlyAskedSliceVariation,

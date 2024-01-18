@@ -38,7 +38,7 @@ const FrequentlyAsked = ({ slice }: FrequentlyAskedProps): JSX.Element => {
               </p>
             </div>
           ))}
-          <div className="flex w-full items-end">
+          <div className="flex w-full">
             <Link
               className={cn(
                 buttonVariants({ variant: 'link' }),
