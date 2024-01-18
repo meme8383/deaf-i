@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="md:flex text-lg text-slate-200 font-semibold text-center">
             <h3>Hosted with Vercel</h3>
             <Dot size={30} className="hidden md:flex" />
-            <h3>Deaf-i is a registered 501(c)(3)</h3>
+            <h3>Deaf-i is a registered nonprofit</h3>
           </div>
         </div>
       </MaxWidthWrapper>
