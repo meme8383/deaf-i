@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useState } from 'react';
 import { Progress } from '@/components/ui/progress';
+import { Icons } from '@/components/Icons';
 
 /**
  * Props for `Hero`.
@@ -34,9 +35,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div
         id="home"
-        className="relative w-full h-[50vw] max-h-[700px] scroll-m-20 bg-slate-300 group"
+        className="relative group flex w-full h-[50vw] max-h-[700px] scroll-m-20"
       >
-        <div className="mx-auto w-full h-full">
+        <div className="flex mx-auto w-full h-full -z-10">
           <Swiper
             modules={[Pagination, Autoplay, Navigation]}
             slidesPerView={1}
@@ -48,7 +49,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             speed={500}
             onSwiper={(swiper) => setSwiper(swiper)}
             loop
-            onAutoplayTimeLeft={(swiper, timeLeft, percentage) =>
+            onAutoplayTimeLeft={(_swiper, _timeLeft, percentage) =>
               setProgress(percentage)
             }
           >
@@ -58,45 +59,48 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                   loading="eager"
                   field={item.image}
                   fill
-                  className="object-cover object-center -z-10 h-full w-full"
+                  className="object-cover object-center -z-30 h-full w-full"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
           <div className="flex flex-col absolute h-full w-full top-0 z-10">
             <Progress value={(1 - progress) * 100} />
-            <div className="flex h-full w-full">
-              <div className="flex flex-col h-full justify-center">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    swiper?.slidePrev();
-                  }}
-                  className="group-hover:opacity-100 opacity-0 transition-opacity duration-300"
-                >
-                  <ChevronLeft size={48} className="text-slate-300" />
-                </button>
-              </div>
-              <div className="flex flex-col justify-center lg:items-center h-full w-full">
-                <h1 className="font-bold tracking-tight text-4xl md:text-6xl text-white mb-5 md:mb-10 lg:mb-5">
-                  Deaf-i
-                </h1>
-                <h3 className="font-semibold tracking-tight sm:text-2xl md:text-3xl text-white">
-                  <PrismicText field={slice.primary.subheader} />
-                </h3>
-              </div>
-              <div className="flex flex-col h-full justify-center">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    swiper?.slideNext();
-                  }}
-                  className="group-hover:opacity-100 opacity-0 transition-opacity duration-300"
-                >
-                  <ChevronRight size={48} className="text-slate-300" />
-                </button>
-              </div>
+          </div>
+        </div>
+        <div className="hidden absolute md:flex bg-white rotate-45 h-[200%] w-lvw -translate-x-[40vw] opacity-40 -z-10"></div>
+        <div className="absolute flex w-full h-full z-20">
+          <div className="flex h-full justify-center">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                swiper?.slidePrev();
+              }}
+              className="group-hover:opacity-100 opacity-0 transition-opacity duration-300"
+            >
+              <ChevronLeft size={48} className="text-slate-300" />
+            </button>
+          </div>
+          <div className="flex h-full w-full">
+            <div className="h-full justify-center w-full md:w-1/2 flex flex-col md:ml-5">
+              <h1 className="hidden md:flex font-bold tracking-tight text-3xl md:text-9xl text-black mb-10 lg:mb-16">
+                <Icons.logo className="w-[30vw]" />
+              </h1>
+              <h3 className="hidden md:flex font-semibold tracking-tight text-xl md:text-4xl text-black">
+                <PrismicText field={slice.primary.subheader} />
+              </h3>
             </div>
+          </div>
+          <div className="flex flex-col h-full justify-center">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                swiper?.slideNext();
+              }}
+              className="group-hover:opacity-100 opacity-0 transition-opacity duration-300"
+            >
+              <ChevronRight size={48} className="text-slate-300" />
+            </button>
           </div>
         </div>
       </div>
