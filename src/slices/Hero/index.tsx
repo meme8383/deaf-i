@@ -35,7 +35,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div
         id="home"
-        className="relative group flex w-full h-[50vw] max-h-[700px] scroll-m-20"
+        className="relative group flex w-full h-[45vw] scroll-m-20"
       >
         <div className="flex mx-auto w-full h-full -z-10">
           <Swiper
