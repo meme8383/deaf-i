@@ -1,8 +1,8 @@
 {
-  "id": "faq_large",
+  "id": "testimonial",
   "type": "SharedSlice",
-  "name": "FaqLarge",
-  "description": "FaqLarge",
+  "name": "Testimonial",
+  "description": "Testimonial",
   "variations": [
     {
       "id": "default",
@@ -13,19 +13,19 @@
       "imageUrl": "",
       "primary": {},
       "items": {
-        "question": {
+        "name": {
           "type": "StructuredText",
           "config": {
-            "label": "Question",
+            "label": "Name",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "answer": {
+        "testimonial": {
           "type": "StructuredText",
           "config": {
-            "label": "Answer",
+            "label": "Testimonial",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

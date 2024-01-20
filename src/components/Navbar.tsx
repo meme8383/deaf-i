@@ -18,16 +18,17 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              <div className="hidden z-50 ml-4 lg:ml-8 md:block md:self-stretch">
+              <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex lg:gap-3 h-full">
                   <NavItem name="About Us" link="/#about-us" />
                   <NavItem name="FAQ" link="/#faq" />
+                  <NavItem name="Testimonials" link="/testimonials" />
                   <NavItem name="Resources" link="/#resources" />
                   <NavItem name="Contact Us" link="/#contact" />
                 </div>
               </div>
               <div className="ml-auto flex items-center mr-4">
-                <div className="hidden md:flex md:flex-1 md:space-x-4">
+                <div className="hidden lg:flex lg:flex-1 lg:space-x-4">
                   <Link
                     target="_blank"
                     href="https://www.instagram.com/deafi_official"
@@ -42,7 +43,7 @@ const Navbar = () => {
                     Donate
                   </Link>
                 </div>
-                <div className="flex flex-1 space-x-6 md:hidden">
+                <div className="flex flex-1 space-x-6 lg:hidden">
                   <MobileNav />
                 </div>
               </div>

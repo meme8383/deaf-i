@@ -18,6 +18,10 @@ const navItems = [
     href: '/#faq',
   },
   {
+    name: 'Testimonials',
+    href: '/testimonials',
+  },
+  {
     name: 'Resources',
     href: '/#resources',
   },
