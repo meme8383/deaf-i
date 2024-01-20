@@ -82,7 +82,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             </button>
           </div>
           <div className="flex h-full w-full">
-            <div className="h-full justify-center w-full md:w-1/2 flex flex-col md:ml-5">
+            <div className="h-full justify-center w-full md:w-[45vw] flex flex-col md:ml-5">
               <h1 className="hidden md:flex font-bold tracking-tight text-3xl md:text-9xl text-black mb-10 lg:mb-16">
                 <Icons.logo className="w-[30vw]" />
               </h1>
