@@ -136,6 +136,71 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type PeopleDocumentDataSlicesSlice = PeopleLargeSlice;
+
+/**
+ * Content for People documents
+ */
+interface PeopleDocumentData {
+  /**
+   * Slice Zone field in *People*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PeopleDocumentDataSlicesSlice> /**
+   * Meta Description field in *People*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: people.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *People*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *People*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: people.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * People document from Prismic
+ *
+ * - **API ID**: `people`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PeopleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PeopleDocumentData>,
+    'people',
+    Lang
+  >;
+
 type TestimonialsDocumentDataSlicesSlice = TestimonialSlice;
 
 /**
@@ -204,6 +269,7 @@ export type TestimonialsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | FaqDocument
   | HomepageDocument
+  | PeopleDocument
   | TestimonialsDocument;
 
 /**
@@ -536,6 +602,141 @@ type PeopleSliceVariation = PeopleSliceDefault;
 export type PeopleSlice = prismic.SharedSlice<'people', PeopleSliceVariation>;
 
 /**
+ * Primary content in *PeopleLarge → Items*
+ */
+export interface PeopleLargeSliceDefaultItem {
+  /**
+   * Name field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Role field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].role
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  role: prismic.RichTextField;
+
+  /**
+   * Description field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Picture field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].picture
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  picture: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for PeopleLarge Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PeopleLargeSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Record<string, never>,
+  Simplify<PeopleLargeSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *PeopleLarge → Items*
+ */
+export interface PeopleLargeSliceBoardMembersItem {
+  /**
+   * Name field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Role field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].role
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  role: prismic.RichTextField;
+
+  /**
+   * Description field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Picture field in *PeopleLarge → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: people_large.items[].picture
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  picture: prismic.ImageField<never>;
+}
+
+/**
+ * BoardMembers variation for PeopleLarge Slice
+ *
+ * - **API ID**: `boardMembers`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PeopleLargeSliceBoardMembers = prismic.SharedSliceVariation<
+  'boardMembers',
+  Record<string, never>,
+  Simplify<PeopleLargeSliceBoardMembersItem>
+>;
+
+/**
+ * Slice variation for *PeopleLarge*
+ */
+type PeopleLargeSliceVariation =
+  | PeopleLargeSliceDefault
+  | PeopleLargeSliceBoardMembers;
+
+/**
+ * PeopleLarge Shared Slice
+ *
+ * - **API ID**: `people_large`
+ * - **Description**: PeopleLarge
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PeopleLargeSlice = prismic.SharedSlice<
+  'people_large',
+  PeopleLargeSliceVariation
+>;
+
+/**
  * Primary content in *Resources → Items*
  */
 export interface ResourcesSliceDefaultItem {
@@ -671,6 +872,9 @@ declare module '@prismicio/client' {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      PeopleDocument,
+      PeopleDocumentData,
+      PeopleDocumentDataSlicesSlice,
       TestimonialsDocument,
       TestimonialsDocumentData,
       TestimonialsDocumentDataSlicesSlice,
@@ -700,6 +904,12 @@ declare module '@prismicio/client' {
       PeopleSliceDefaultItem,
       PeopleSliceVariation,
       PeopleSliceDefault,
+      PeopleLargeSlice,
+      PeopleLargeSliceDefaultItem,
+      PeopleLargeSliceBoardMembersItem,
+      PeopleLargeSliceVariation,
+      PeopleLargeSliceDefault,
+      PeopleLargeSliceBoardMembers,
       ResourcesSlice,
       ResourcesSliceDefaultItem,
       ResourcesSliceVariation,

@@ -1,11 +1,14 @@
 'use client';
 
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Content } from '@prismicio/client';
 import { PrismicNextImage } from '@prismicio/next';
 import { PrismicText, SliceComponentProps } from '@prismicio/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 /**
@@ -23,6 +26,8 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
   const [textIndex, setTextIndex] = useState(0);
   const people = slice.items;
 
+  const router = useRouter();
+
   useEffect(() => {
     setFade(true);
     const timer = setTimeout(() => {
@@ -33,7 +38,13 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
   }, [selected]);
 
   const next = () => {
-    setSelected((prev) => (prev + 1) % people.length);
+    setSelected((prev) => {
+      if (prev === people.length - 1) {
+        router.push('/people');
+        return prev;
+      }
+      return (prev + 1) % people.length;
+    });
   };
 
   const prev = () => {
@@ -47,7 +58,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
     >
       <div className="bg-slate-200 my-5 py-2">
         <MaxWidthWrapper>
-          <div className="text-foreground md:mx-10 py-5">
+          <div className="text-foreground md:mx-10 py-2">
             <h1 className="w-full border-b border-b-slate-400 tracking-tight font-semibold text-3xl">
               Our People
             </h1>
@@ -62,16 +73,16 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
               >
                 <ChevronLeft size={48} />
               </button>
-              <div className="hidden xl:flex">
+              <div className="hidden lg:flex">
                 {people.map((person, i) => (
                   <button
                     onClick={() => setSelected(i)}
                     key={i}
                     className={cn(
-                      'h-28 relative items-center justify-center m-auto aspect-square rounded-full overflow-hidden mx-1 2xl:mx-3 duration-300 ease-in-out bg-gray-400',
+                      'h-28 xl:h-32 relative items-center justify-center m-auto aspect-square rounded-full overflow-hidden mx-1 xl:mx-3 duration-300 ease-in-out bg-gray-400',
                       {
                         'hover:scale-110': selected !== i,
-                        'h-56': selected === i,
+                        'h-56 xl:h-56': selected === i,
                       }
                     )}
                   >
@@ -84,7 +95,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                   </button>
                 ))}
               </div>
-              <div className="relative xl:hidden">
+              <div className="relative lg:hidden">
                 <button
                   className={cn(
                     'relative h-56 aspect-square rounded-full overflow-hidden transition-opacity duration-300 bg-gray-400',
@@ -101,14 +112,7 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                   />
                 </button>
               </div>
-              <button
-                className={cn('my-auto', {
-                  'text-slate-300': selected === people.length - 1,
-                  'text-slate-500': selected !== people.length - 1,
-                })}
-                onClick={() => next()}
-                disabled={selected === people.length - 1}
-              >
+              <button className="my-auto text-slate-500" onClick={() => next()}>
                 <ChevronRight size={48} />
               </button>
             </div>
@@ -128,6 +132,18 @@ const People = ({ slice }: PeopleProps): JSX.Element => {
                 <PrismicText field={people[textIndex].description} />
               </p>
             </div>
+          </div>
+          <div className="flex w-full">
+            <Link
+              className={cn(
+                buttonVariants({ variant: 'link' }),
+                'ml-auto gap-1.5 text-lg'
+              )}
+              href="/people"
+            >
+              Read More
+              <ArrowRight size={20} />
+            </Link>
           </div>
         </MaxWidthWrapper>
       </div>

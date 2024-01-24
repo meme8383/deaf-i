@@ -9,6 +9,7 @@ export const components = {
   frequently_asked: dynamic(() => import('./FrequentlyAsked')),
   hero: dynamic(() => import('./Hero')),
   people: dynamic(() => import('./People')),
+  people_large: dynamic(() => import('./PeopleLarge')),
   resources: dynamic(() => import('./Resources')),
   testimonial: dynamic(() => import('./Testimonial')),
 };
