@@ -38,8 +38,8 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'people',
-    path: '/people'
-  }
+    path: '/people',
+  },
 ];
 
 /**
