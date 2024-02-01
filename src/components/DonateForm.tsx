@@ -9,25 +9,25 @@ import MaxWidthWrapper from './MaxWidthWrapper';
 import { Input } from './ui/input';
 import { cn } from '@/lib/utils';
 import { Label } from './ui/label';
+import { Loader2 } from 'lucide-react';
 
 const MIN_AMOUNT = 5.0;
 const MAX_AMOUNT = 500.0;
 
 export default function DonateForm(): JSX.Element {
-  const [loading] = useState<boolean>(false);
-  const [input, setInput] = useState<{ customDonation: number }>({
-    customDonation: 100.0,
+  const [loading, setLoading] = useState<boolean>(false);
+  const [input, setInput] = useState<{ customDonation: number | undefined }>({
+    customDonation: undefined,
   });
 
   const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (
     e
-  ): void =>
-    setInput({
-      ...input,
-      [e.currentTarget.name]: e.currentTarget.value,
-    });
+  ): void => {
+    setInput({ customDonation: parseFloat(e.target.value) });
+  };
 
   const formAction = async (data: FormData): Promise<void> => {
+    setLoading(true);
     const { url } = await createCheckoutSession(data);
 
     window.location.assign(url as string);
@@ -65,9 +65,10 @@ export default function DonateForm(): JSX.Element {
             </p>
             <Input
               className={cn('w-full mt-3 px-5', {
-                'focus-visible:ring-red-500':
-                  input.customDonation < MIN_AMOUNT ||
-                  input.customDonation > MAX_AMOUNT,
+                'focus-visible:ring-red-500': input.customDonation
+                  ? input.customDonation < MIN_AMOUNT ||
+                    input.customDonation > MAX_AMOUNT
+                  : false,
               })}
               name="customDonation"
               type="number"
@@ -78,25 +79,41 @@ export default function DonateForm(): JSX.Element {
               onChange={handleInputChange}
               value={input.customDonation}
             />
-            {input.customDonation < MIN_AMOUNT ||
-            input.customDonation > MAX_AMOUNT ? (
+            {(
+              input.customDonation
+                ? input.customDonation < MIN_AMOUNT ||
+                  input.customDonation > MAX_AMOUNT
+                : false
+            ) ? (
               <p className="text-red-500 text-sm mt-1">
                 Please enter a value between{' '}
                 {formatAmountForDisplay(MIN_AMOUNT, 'usd')} and{' '}
                 {formatAmountForDisplay(MAX_AMOUNT, 'usd')}
               </p>
             ) : null}
-            <Button
-              className="mt-3 w-full"
-              type="submit"
-              disabled={
-                loading ||
-                input.customDonation < MIN_AMOUNT ||
-                input.customDonation > MAX_AMOUNT
-              }
-            >
-              Donate {formatAmountForDisplay(input.customDonation, 'usd')}
-            </Button>
+            <div className="mt-3 w-full flex items-center">
+              <Button
+                className="w-full"
+                type="submit"
+                disabled={
+                  loading ||
+                  input.customDonation === undefined ||
+                  input.customDonation < MIN_AMOUNT ||
+                  input.customDonation > MAX_AMOUNT
+                }
+              >
+                Donate{' '}
+                {input.customDonation
+                  ? formatAmountForDisplay(input.customDonation, 'usd')
+                  : ''}
+              </Button>
+              <Loader2
+                className={cn('animate-spin ml-2', {
+                  hidden: !loading,
+                })}
+                size={32}
+              />
+            </div>
           </form>
         </div>
       </MaxWidthWrapper>
