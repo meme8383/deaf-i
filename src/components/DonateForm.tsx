@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { formatAmountForDisplay } from '@/utils/stripe-helpers';
 import { createCheckoutSession } from '@/app/actions/stripe';
@@ -15,7 +15,7 @@ const MIN_AMOUNT = 5.0;
 const MAX_AMOUNT = 500.0;
 
 export default function DonateForm(): JSX.Element {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [data, setData] = useState<FormData | undefined>(undefined);
   const [input, setInput] = useState<{ customDonation: number | undefined }>({
     customDonation: undefined,
   });
@@ -26,11 +26,18 @@ export default function DonateForm(): JSX.Element {
     setInput({ customDonation: parseFloat(e.target.value) });
   };
 
-  const formAction = async (data: FormData): Promise<void> => {
-    setLoading(true);
-    const { url } = await createCheckoutSession(data);
+  useEffect(() => {
+    if (data) {
+      const createCheckout = async () => {
+        const { url } = await createCheckoutSession(data);
+        window.location.assign(url as string);
+      };
+      createCheckout();
+    }
+  }, [data]);
 
-    window.location.assign(url as string);
+  const formAction = (data: FormData) => {
+    setData(data);
   };
 
   const chooseAmount = (e: React.FormEvent, amount: number): void => {
@@ -96,7 +103,7 @@ export default function DonateForm(): JSX.Element {
                 className="w-full"
                 type="submit"
                 disabled={
-                  loading ||
+                  !!data ||
                   input.customDonation === undefined ||
                   input.customDonation < MIN_AMOUNT ||
                   input.customDonation > MAX_AMOUNT
@@ -109,7 +116,7 @@ export default function DonateForm(): JSX.Element {
               </Button>
               <Loader2
                 className={cn('animate-spin ml-2', {
-                  hidden: !loading,
+                  hidden: !data,
                 })}
                 size={32}
               />
