@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { PrismicRichText, SliceZone } from '@prismicio/react';
+import { PrismicRichText } from '@prismicio/react';
 
 import { createClient } from '@/prismicio';
-import { components } from '@/slices';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import CommentsSection from '@/components/CommentsSection';
 
 type Params = { uid: string };
 
@@ -24,8 +24,18 @@ export default async function Page({ params }: { params: Params }) {
       <div className="mt-5 font-md text-foreground indent-8 max-w-3xl mx-auto">
         <PrismicRichText field={page.data.body} />
       </div>
+      <div className="mt-8 mb-8">
+        <CommentsSection
+          url={process.env.NEXT_PUBLIC_URL + '/blog/' + params.uid}
+          title={page.data.meta_title as string}
+          id={params.uid}
+        />
+      </div>
       <div className="mt-8 text-sm text-gray-500 text-center">
-        <p>&copy; {new Date().getFullYear()} All rights reserved. Unauthorized use or reproduction of this content is prohibited.</p>
+        <p>
+          &copy; {new Date().getFullYear()} All rights reserved. Unauthorized
+          use or reproduction of this content is prohibited.
+        </p>
       </div>
     </MaxWidthWrapper>
   );

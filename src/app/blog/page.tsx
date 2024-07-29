@@ -22,9 +22,7 @@ const page = async () => {
               <h2 className="text-xl font-semibold text-gray-800 mb-2">
                 <PrismicRichText field={post.data.title} />
               </h2>
-              <p className="text-gray-600 text-sm">
-                Read more...
-              </p>
+              <p className="text-gray-600 text-sm">Read more...</p>
             </div>
           </a>
         ))}
