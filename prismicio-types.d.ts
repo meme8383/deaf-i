@@ -4,6 +4,89 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type BlogDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Blog documents
+ */
+interface BlogDocumentData {
+  /**
+   * Title field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.body
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Blog*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
+   * Meta Description field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Blog document from Prismic
+ *
+ * - **API ID**: `blog`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, 'blog', Lang>;
+
 type FaqDocumentDataSlicesSlice = FaqLargeSlice;
 
 /**
@@ -267,21 +350,22 @@ export type TestimonialsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | BlogDocument
   | FaqDocument
   | HomepageDocument
   | PeopleDocument
   | TestimonialsDocument;
 
 /**
- * Primary content in *AboutUs → Primary*
+ * Primary content in *AboutUs → Default → Primary*
  */
 export interface AboutUsSliceDefaultPrimary {
   /**
-   * Mission Statement field in *AboutUs → Primary*
+   * Mission Statement field in *AboutUs → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about_us.primary.mission_statement
+   * - **API ID Path**: about_us.default.primary.mission_statement
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   mission_statement: prismic.RichTextField;
@@ -318,15 +402,15 @@ export type AboutUsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *ContactUs → Primary*
+ * Primary content in *ContactUs → Default → Primary*
  */
 export interface ContactUsSliceDefaultPrimary {
   /**
-   * Email field in *ContactUs → Primary*
+   * Email field in *ContactUs → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact_us.primary.email
+   * - **API ID Path**: contact_us.default.primary.email
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email: prismic.KeyTextField;
@@ -473,15 +557,15 @@ export type FrequentlyAskedSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
   /**
-   * Subheader field in *Hero → Primary*
+   * Subheader field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.subheader
+   * - **API ID Path**: hero.default.primary.subheader
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheader: prismic.RichTextField;
@@ -866,6 +950,9 @@ declare module '@prismicio/client' {
 
   namespace Content {
     export type {
+      BlogDocument,
+      BlogDocumentData,
+      BlogDocumentDataSlicesSlice,
       FaqDocument,
       FaqDocumentData,
       FaqDocumentDataSlicesSlice,

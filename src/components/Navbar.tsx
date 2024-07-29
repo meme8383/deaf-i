@@ -24,6 +24,7 @@ const Navbar = () => {
                   <NavItem name="FAQ" link="/#faq" />
                   <NavItem name="Testimonials" link="/testimonials" />
                   <NavItem name="Resources" link="/#resources" />
+                  <NavItem name="Blog" link="/blog" />
                   <NavItem name="Contact Us" link="/#contact" />
                 </div>
               </div>
