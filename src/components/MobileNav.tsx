@@ -26,6 +26,10 @@ const navItems = [
     href: '/#resources',
   },
   {
+    name: 'Blog',
+    href: '/blog',
+  },
+  {
     name: 'Contact Us',
     href: '/#contact',
   },
