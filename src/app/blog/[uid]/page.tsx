@@ -26,7 +26,13 @@ export default async function Page({ params }: { params: Params }) {
       </div>
       <div className="mt-8 mb-8">
         <CommentsSection
-          url={process.env.NEXT_PUBLIC_URL + '/blog/' + params.uid}
+          url={
+            'https://' +
+            (process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL ||
+              'www.deaf-i.org') +
+            '/blog/' +
+            params.uid
+          }
           title={page.data.meta_title as string}
           id={params.uid}
         />
