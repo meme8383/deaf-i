@@ -1,5 +1,6 @@
 import DonateForm from '@/components/DonateForm';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import NewsletterForm from '@/components/NewsletterForm';
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 import { Instagram, Mail } from 'lucide-react';
@@ -28,6 +29,7 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
                   Contact us
                 </h1>
               </div>
+              <NewsletterForm />
               <div className="flex flex-col w-full max-w-xl mx-auto">
                 <Link
                   href={`mailto:${slice.primary.email}`}

@@ -12,13 +12,15 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@prismicio/client": "^7.7.4",
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-progress": "^1.1.0",
-    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-slot": "^1.1.0",
     "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^2.4.0",
     "@types/micro-cors": "^0.1.5",
@@ -32,13 +34,16 @@
     "next": "14.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.1",
     "stripe": "^14.25.0",
     "swiper": "^11.1.8",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.43",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.20",
     "@types/node": "^20.14.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
