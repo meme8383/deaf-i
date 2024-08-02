@@ -21,7 +21,7 @@ const Navbar = () => {
               <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex lg:gap-3 h-full">
                   <NavItem name="About Us" link="/#about-us" />
-                  <NavItem name="FAQ" link="/#faq" />
+                  <NavItem name="FAQ" link="/faq" />
                   <NavItem name="Testimonials" link="/testimonials" />
                   <NavItem name="Resources" link="/#resources" />
                   <NavItem name="Blog" link="/blog" />

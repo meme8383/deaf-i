@@ -15,7 +15,7 @@ const navItems = [
   },
   {
     name: 'FAQ',
-    href: '/#faq',
+    href: '/faq',
   },
   {
     name: 'Testimonials',

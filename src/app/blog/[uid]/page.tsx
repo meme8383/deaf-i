@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: Params }) {
         </div>
       </div>
       <div className="mt-5 font-md text-foreground indent-8 max-w-3xl mx-auto space-y-3">
-        <PrismicRichText field={page.data.body}/>
+        <PrismicRichText field={page.data.body} />
       </div>
       <div className="mt-8 mb-8">
         <CommentsSection
