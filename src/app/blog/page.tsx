@@ -16,13 +16,28 @@ const page = async () => {
           <a
             key={post.id}
             href={`/blog/${post.uid}`}
-            className="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            className="bg-gray-50 shadow-lg rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
             <div className="p-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-2xl font-bold text-black mb-2">
                 <PrismicRichText field={post.data.title} />
               </h2>
-              <p className="text-gray-600 text-sm">Read more...</p>
+              <p className="text-gray-500 text-sm mb-2">
+                {new Date(post.first_publication_date).toLocaleDateString(
+                  'en-US',
+                  {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }
+                )}
+              </p>
+              <div className="text-gray-600 text-sm mb-3 line-clamp-2">
+                <PrismicRichText field={post.data.body} />
+              </div>
+              <p className="text-blue-600 text-base font-medium text-end">
+                Read more →
+              </p>
             </div>
           </a>
         ))}

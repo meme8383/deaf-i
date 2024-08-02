@@ -21,7 +21,14 @@ export default async function Page({ params }: { params: Params }) {
           <PrismicRichText field={page.data.title} />
         </div>
       </div>
-      <div className="mt-5 font-md text-foreground indent-8 max-w-3xl mx-auto space-y-3">
+      <div className="text-center text-sm text-gray-500 mt-2">
+        {new Date(page.first_publication_date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </div>
+      <div className="mt-3 font-md text-foreground indent-8 max-w-3xl mx-auto space-y-3">
         <PrismicRichText field={page.data.body} />
       </div>
       <div className="mt-8 mb-8">
