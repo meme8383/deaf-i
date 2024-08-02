@@ -91,7 +91,7 @@ export default function NewsletterForm() {
                       className="rounded-l-none w-32"
                     >
                       {loading ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="animate-spin" size={24} />
                       ) : (
                         'Subscribe'
                       )}

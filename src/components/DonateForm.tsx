@@ -109,17 +109,16 @@ export default function DonateForm(): JSX.Element {
                   input.customDonation > MAX_AMOUNT
                 }
               >
-                Donate{' '}
-                {input.customDonation
-                  ? formatAmountForDisplay(input.customDonation, 'usd')
-                  : ''}
+                {!data ? (
+                  `Donate ${
+                    input.customDonation
+                      ? formatAmountForDisplay(input.customDonation, 'usd')
+                      : ''
+                  }`
+                ) : (
+                  <Loader2 className="animate-spin" size={24} />
+                )}
               </Button>
-              <Loader2
-                className={cn('animate-spin ml-2', {
-                  hidden: !data,
-                })}
-                size={32}
-              />
             </div>
           </form>
         </div>
