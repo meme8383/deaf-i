@@ -17,12 +17,12 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <MaxWidthWrapper className="mt-3">
       <div className="flex">
-        <div className="text-center text-4xl border-b font-semibold mx-auto md:px-10 mb-3">
+        <div className="text-center text-4xl border-b font-semibold mx-auto md:px-10">
           <PrismicRichText field={page.data.title} />
         </div>
       </div>
-      <div className="mt-5 font-md text-foreground indent-8 max-w-3xl mx-auto">
-        <PrismicRichText field={page.data.body} />
+      <div className="mt-5 font-md text-foreground indent-8 max-w-3xl mx-auto space-y-3">
+        <PrismicRichText field={page.data.body}/>
       </div>
       <div className="mt-8 mb-8">
         <CommentsSection
@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: Params }) {
           id={params.uid}
         />
       </div>
-      <div className="mt-8 text-sm text-gray-500 text-center">
+      <div className="mt-8 text-sm text-gray-500 text-center mb-5">
         <p>
           &copy; {new Date().getFullYear()} All rights reserved. Unauthorized
           use or reproduction of this content is prohibited.
